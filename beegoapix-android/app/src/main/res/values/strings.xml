@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Beegoapix-android</string>
+    <string name="text_check_version">check version</string>
+    <string name="error_connection">network error</string>
+    <string name="error_system">system error</string>
 </resources>
