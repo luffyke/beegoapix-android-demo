@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         apiRequest.data = request;
         ApiFactory.create().getAppApiService()
                 .checkVersion(apiRequest)
-                .compose(RxHelper.<AppCheckVersionResponse>handleResult())
+                .compose(RxHelper.handleResult())
                 .subscribe(new RxSubscriber<ApiResponse<AppCheckVersionResponse>>(this) {
                     @Override
                     public void onNext(ApiResponse<AppCheckVersionResponse> response) {
