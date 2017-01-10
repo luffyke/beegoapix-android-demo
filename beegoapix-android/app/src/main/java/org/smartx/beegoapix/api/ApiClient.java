@@ -23,8 +23,10 @@ public class ApiClient {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
+                .addInterceptor(new SessionInterceptor())
                 //.addInterceptor(new GzipRequsetInterceptor())
                 .build();
+        OKHttpUtils.cancelCallWithTag(client);
         this.retrofit = new Retrofit.Builder()
                 .baseUrl(API_HOST)
                 .client(client)
